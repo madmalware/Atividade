@@ -1,0 +1,113 @@
+programa {
+  
+  inteiro valor, resultado, soma, pizzap, pizzam, pizzag, pizzagg, quantidade, pizza
+  cadeia volta
+
+  funcao inicio() {
+    
+    pizzap = 25
+    pizzam = 30
+    pizzag = 40
+    pizzagg = 50
+
+    saldo()
+    pagamento()
+    escolher()
+    volta()
+    
+
+  }
+
+funcao saldo(){
+  escreva("Qual o seu saldo? ")
+  leia(valor)
+  }
+
+  funcao pagamento(){
+
+    inteiro opcao
+  escreva("Formas de pagamento:\n")
+  escreva("1) Débito\n")
+  escreva("2) Dinheiro\n")
+  escreva("3) Crédito\n")
+  escreva("4) Pix\n")
+  leia(opcao)
+  }
+
+  funcao escolher(){
+
+     escreva("Informe a opção que deseja: \n1) Pizza P.\n2) Pizza M.\n3) Pizza G.\n4) Pizza GG.\n")
+        leia (pizza)
+
+        limpa()
+
+
+        escolha (pizza)
+        {
+            caso 1:
+            escreva("Informe quantos pizzas P deseja:")
+            leia (quantidade)
+            soma = valor - (quantidade * pizzap)
+            se (valor < pizzap){
+             escreva("A compra não pode ser realizada, seu saldo é insuficiente.")
+            }
+            senao{
+             escreva("compra realizada com sucesso")
+            }
+            pare
+
+            caso 2:
+            escreva("Informe quantos pizzas M deseja:")
+            leia(quantidade)
+            soma = valor - (quantidade * pizzam)
+            se (valor < pizzam){
+             escreva("A compra não pode ser realizada, seu saldo é insuficiente.")
+            }
+            senao{
+             escreva("compra realizada com sucesso")
+            }
+            
+            pare
+           
+            caso 3:
+            escreva("Informe quantos pizzas G deseja:")
+            leia(quantidade)
+            soma = valor - (quantidade * pizzag)
+            se (valor < pizzag){
+             escreva("A compra não pode ser realizada, seu saldo é insuficiente.")
+            }
+            senao{
+             escreva("compra realizada com sucesso")
+            }
+            pare
+
+            caso 4:
+            escreva("Informe quantos pizzas GG deseja:")
+            leia(quantidade)
+            soma = valor - (quantidade * pizzagg)
+            se (valor < pizzagg){
+             escreva("A compra não pode ser realizada, seu saldo é insuficiente.")
+            }
+            senao{
+             escreva("compra realizada com sucesso")
+            }
+            pare
+
+            caso contrario:
+            escreva("Opção inválida!")
+        }
+
+  }
+  funcao volta(){
+
+  escreva("\n\nDeseja voltar ao menu (s ou n)? ")
+    leia(volta)
+
+    se(volta == "s"){
+      inicio() 
+    }
+    senao{
+      escreva("Atendimento encerrado.")
+    }
+  }
+}
