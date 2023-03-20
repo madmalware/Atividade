@@ -1,0 +1,160 @@
+programa
+{
+  inclua biblioteca Calendario
+	cadeia nome = "", sexo, sair, email, cargo
+	inteiro nascimento[3]
+	inteiro senha, opcao
+
+    funcao inicio()
+    {
+      relatorio()
+
+    }
+
+    funcao menu(){
+
+        escreva("Escolha a opção desejada:\n")
+        escreva("1) Ponto Eletrônico\n")
+        escreva("2) Gerência\n")
+        escreva("3) Relatório\n")
+        escreva("4) Cadastro de Funcionario\n")
+        escreva("5) Setores\n")
+        escreva("6) Sair do menu\n")
+        leia(opcao)
+
+        limpa()
+
+        escolha(opcao)
+        {
+            caso 1:
+                ponto()
+                voltar()
+            pare
+            caso 2:
+                gerencia()
+                voltar()
+            pare
+            caso 3:
+                relatorio()
+                voltar()
+            pare
+            caso 4:
+                cadastro()
+                voltar()
+            pare
+            caso 5:
+            	setores()
+			voltar()
+            pare
+            caso 6:
+            	login()
+            pare
+        }
+        }
+
+    funcao login(){
+    	cadeia usuario
+    	inteiro senha1
+    	escreva("Usuário: ")
+    	leia(usuario)
+    	escreva("Senha: ")
+    	leia(senha1)
+
+    	se (usuario == "adm" e senha1 == 123){
+    		menu()
+    		}
+    		senao{
+    		escreva("Usuário ou senha incorretos")
+    		}
+
+
+    	}
+
+    funcao cadastro()
+    {
+        escreva("Nome completo: ")
+        leia(nome)
+        limpa()
+        escreva("Gênero: f/m ")
+        leia(sexo)
+        limpa()
+        escreva("Data de nascimento:\nDia: ")
+        leia(nascimento[0])
+        escreva("\nMês: ")
+        leia(nascimento[1])
+        escreva("\nAno: ")
+        leia(nascimento[2])
+        limpa()
+        escreva("Cargo: ")
+        leia(cargo)
+        escreva("Email: ")
+        leia(email)
+        limpa()
+        escreva("Senha: (apenas números) ")
+        leia(senha)
+        limpa()
+
+        voltar() 
+    }
+
+
+    funcao ponto()
+    {
+      cadeia nome2
+      escreva("Nome: ")
+      leia(nome2)
+      escreva("O funcionário(a) ", nome2, " bateu ponto às: ", Calendario.hora_atual(formato_24h), ":", Calendario.minuto_atual(), " - Data: ", Calendario.mes_atual(), "-", Calendario.ano_atual())
+    }
+
+    funcao gerencia()
+    {
+
+
+    }
+
+
+    funcao relatorio()
+    {
+      se (nome == ""){
+        escreva("Você ainda não está cadastrado!\n")
+        cadastro()
+        }
+      senao{
+        escreva("Nome: ", nome, "\n")
+        escreva("Gênero: ", sexo,"\n")
+        escreva("Data de nascimento: ", nascimento[0],"/",nascimento[1],"/",nascimento[2],"\n")
+        escreva("Cargo: ", cargo)
+      }
+      }
+
+
+	funcao setores(){
+    escreva("Setor A: administrativo.\n")
+    escreva("Setor B: financeiro.\n")
+    escreva("Setor C: RH.\n")
+    escreva("Setor D: operacional.\n")
+    escreva("Setor E: comercial.\n")
+
+	}
+
+
+    funcao voltar()
+    {
+        escreva("Deseja retornar ao menu?\n (Sim ou Não)")
+        leia(sair)
+
+        se(sair == "Sim")
+        {
+            limpa()
+            menu()
+        }
+        senao se(sair == "Não")
+        {
+        }
+        senao
+        {
+            escreva("Opção inválida. ")
+            voltar()
+        }
+    }
+}
